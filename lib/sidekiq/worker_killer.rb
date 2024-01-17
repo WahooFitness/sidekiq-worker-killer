@@ -44,7 +44,7 @@ class Sidekiq::WorkerKiller
   #   (default: `nil`)
   def initialize(options = {})
     @max_rss         = options.fetch(:max_rss, 0)
-    @max_gc_rss      = options.fetch(:max_gs_rss, @max_rss)
+    @max_gc_rss      = options.fetch(:max_gc_rss, @max_rss)
     @grace_time      = options.fetch(:grace_time, 15 * 60)
     @shutdown_wait   = options.fetch(:shutdown_wait, 30)
     @kill_signal     = options.fetch(:kill_signal, "SIGKILL")
